@@ -1,5 +1,5 @@
-import { Bear } from "models/Bear";
-import { router } from "index";
+import { Bear } from "../models/Bear";
+import { router } from "../index";
 
 router.get("/bears", async (req, res) => {
     const bears = await Bear.find();
