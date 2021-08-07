@@ -1,642 +1,616 @@
 {
-  "contractName": "Bear",
-  "abi": [
-    {
-      "anonymous": false,
-      "inputs": [
+    "contractName": "Bear",
+    "abi": [
         {
-          "indexed": false,
-          "internalType": "bytes32",
-          "name": "name",
-          "type": "bytes32"
-        }
-      ],
-      "name": "NameChanged",
-      "type": "event"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "internalType": "bytes32",
-          "name": "_name",
-          "type": "bytes32"
-        }
-      ],
-      "name": "set",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    }
-  ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"name\",\"type\":\"bytes32\"}],\"name\":\"NameChanged\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_name\",\"type\":\"bytes32\"}],\"name\":\"set\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/kyle/Playground/solidity/decent-challenge/contracts/Bear.sol\":\"Bear\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/kyle/Playground/solidity/decent-challenge/contracts/Bear.sol\":{\"keccak256\":\"0x6f81c0cbc8907e0640c656f729db51ac5d70477877ae8453be93b0c27520bd57\",\"urls\":[\"bzz-raw://f3982a0b3caf2152b664b341bdb99145bba4892afbed30eefff937fcaf52a308\",\"dweb:/ipfs/QmP7LTRyagfA43h4keWQ9CVbB8cyxnznDSNxT7BKTJnSTL\"]}},\"version\":1}",
-  "bytecode": "0x6080604052348015600f57600080fd5b5060ce8061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063db80813f14602d575b600080fd5b605660048036036020811015604157600080fd5b81019080803590602001909291905050506058565b005b806000819055507fb0a4d76c825dc814a59c1a90f520a677f3f0843980294ef90afe1d7616a1cf70816040518082815260200191505060405180910390a15056fea265627a7a7231582028ec28abf8fda16aafd31dd4acf002a912e7070567491ef426c739a57202567964736f6c63430005100032",
-  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063db80813f14602d575b600080fd5b605660048036036020811015604157600080fd5b81019080803590602001909291905050506058565b005b806000819055507fb0a4d76c825dc814a59c1a90f520a677f3f0843980294ef90afe1d7616a1cf70816040518082815260200191505060405180910390a15056fea265627a7a7231582028ec28abf8fda16aafd31dd4acf002a912e7070567491ef426c739a57202567964736f6c63430005100032",
-  "sourceMap": "73:176:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;73:176:0;;;;;;;",
-  "deployedSourceMap": "73:176:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;73:176:0;;;;;;;;;;;;;;;;;;;150:97;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;150:97:0;;;;;;;;;;;;;;;;;:::i;:::-;;;202:5;195:4;:12;;;;222:18;234:5;222:18;;;;;;;;;;;;;;;;;;150:97;:::o",
-  "source": "pragma solidity >=0.4.21 <0.7.0;\n\n// Stores the name of the current bear\ncontract Bear {\n    bytes32 name;\n\n    event NameChanged(bytes32 name);\n\n    function set(bytes32 _name) public {\n        name = _name;\n        emit NameChanged(_name);\n    }\n}\n",
-  "sourcePath": "/home/kyle/Playground/solidity/decent-challenge/contracts/Bear.sol",
-  "ast": {
-    "absolutePath": "/home/kyle/Playground/solidity/decent-challenge/contracts/Bear.sol",
-    "exportedSymbols": {
-      "Bear": [
-        22
-      ]
-    },
-    "id": 23,
-    "nodeType": "SourceUnit",
-    "nodes": [
-      {
-        "id": 1,
-        "literals": [
-          "solidity",
-          ">=",
-          "0.4",
-          ".21",
-          "<",
-          "0.7",
-          ".0"
-        ],
-        "nodeType": "PragmaDirective",
-        "src": "0:32:0"
-      },
-      {
-        "baseContracts": [],
-        "contractDependencies": [],
-        "contractKind": "contract",
-        "documentation": null,
-        "fullyImplemented": true,
-        "id": 22,
-        "linearizedBaseContracts": [
-          22
-        ],
-        "name": "Bear",
-        "nodeType": "ContractDefinition",
-        "nodes": [
-          {
-            "constant": false,
-            "id": 3,
-            "name": "name",
-            "nodeType": "VariableDeclaration",
-            "scope": 22,
-            "src": "93:12:0",
-            "stateVariable": true,
-            "storageLocation": "default",
-            "typeDescriptions": {
-              "typeIdentifier": "t_bytes32",
-              "typeString": "bytes32"
-            },
-            "typeName": {
-              "id": 2,
-              "name": "bytes32",
-              "nodeType": "ElementaryTypeName",
-              "src": "93:7:0",
-              "typeDescriptions": {
-                "typeIdentifier": "t_bytes32",
-                "typeString": "bytes32"
-              }
-            },
-            "value": null,
-            "visibility": "internal"
-          },
-          {
             "anonymous": false,
-            "documentation": null,
-            "id": 7,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "name",
+                    "type": "bytes32"
+                }
+            ],
             "name": "NameChanged",
-            "nodeType": "EventDefinition",
-            "parameters": {
-              "id": 6,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 5,
-                  "indexed": false,
-                  "name": "name",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 7,
-                  "src": "130:12:0",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
-                  },
-                  "typeName": {
-                    "id": 4,
-                    "name": "bytes32",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "130:7:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "129:14:0"
-            },
-            "src": "112:32:0"
-          },
-          {
-            "body": {
-              "id": 20,
-              "nodeType": "Block",
-              "src": "185:62:0",
-              "statements": [
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "id": 14,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": false,
-                    "lValueRequested": false,
-                    "leftHandSide": {
-                      "argumentTypes": null,
-                      "id": 12,
-                      "name": "name",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 3,
-                      "src": "195:4:0",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_bytes32",
-                        "typeString": "bytes32"
-                      }
-                    },
-                    "nodeType": "Assignment",
-                    "operator": "=",
-                    "rightHandSide": {
-                      "argumentTypes": null,
-                      "id": 13,
-                      "name": "_name",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 9,
-                      "src": "202:5:0",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_bytes32",
-                        "typeString": "bytes32"
-                      }
-                    },
-                    "src": "195:12:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
-                    }
-                  },
-                  "id": 15,
-                  "nodeType": "ExpressionStatement",
-                  "src": "195:12:0"
-                },
-                {
-                  "eventCall": {
-                    "argumentTypes": null,
-                    "arguments": [
-                      {
-                        "argumentTypes": null,
-                        "id": 17,
-                        "name": "_name",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 9,
-                        "src": "234:5:0",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_bytes32",
-                          "typeString": "bytes32"
-                        }
-                      }
-                    ],
-                    "expression": {
-                      "argumentTypes": [
-                        {
-                          "typeIdentifier": "t_bytes32",
-                          "typeString": "bytes32"
-                        }
-                      ],
-                      "id": 16,
-                      "name": "NameChanged",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 7,
-                      "src": "222:11:0",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_function_event_nonpayable$_t_bytes32_$returns$__$",
-                        "typeString": "function (bytes32)"
-                      }
-                    },
-                    "id": 18,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": false,
-                    "kind": "functionCall",
-                    "lValueRequested": false,
-                    "names": [],
-                    "nodeType": "FunctionCall",
-                    "src": "222:18:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_tuple$__$",
-                      "typeString": "tuple()"
-                    }
-                  },
-                  "id": 19,
-                  "nodeType": "EmitStatement",
-                  "src": "217:23:0"
-                }
-              ]
-            },
-            "documentation": null,
-            "id": 21,
-            "implemented": true,
-            "kind": "function",
-            "modifiers": [],
-            "name": "set",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 10,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 9,
-                  "name": "_name",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 21,
-                  "src": "163:13:0",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
-                  },
-                  "typeName": {
-                    "id": 8,
-                    "name": "bytes32",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "163:7:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "162:15:0"
-            },
-            "returnParameters": {
-              "id": 11,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "185:0:0"
-            },
-            "scope": 22,
-            "src": "150:97:0",
-            "stateMutability": "nonpayable",
-            "superFunction": null,
-            "visibility": "public"
-          }
-        ],
-        "scope": 23,
-        "src": "73:176:0"
-      }
-    ],
-    "src": "0:250:0"
-  },
-  "legacyAST": {
-    "attributes": {
-      "absolutePath": "/home/kyle/Playground/solidity/decent-challenge/contracts/Bear.sol",
-      "exportedSymbols": {
-        "Bear": [
-          22
-        ]
-      }
-    },
-    "children": [
-      {
-        "attributes": {
-          "literals": [
-            "solidity",
-            ">=",
-            "0.4",
-            ".21",
-            "<",
-            "0.7",
-            ".0"
-          ]
+            "type": "event"
         },
-        "id": 1,
-        "name": "PragmaDirective",
-        "src": "0:32:0"
-      },
-      {
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "internalType": "bytes32",
+                    "name": "_name",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "set",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }
+    ],
+    "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"name\",\"type\":\"bytes32\"}],\"name\":\"NameChanged\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_name\",\"type\":\"bytes32\"}],\"name\":\"set\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/kyle/Playground/solidity/decent-challenge/contracts/Bear.sol\":\"Bear\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/kyle/Playground/solidity/decent-challenge/contracts/Bear.sol\":{\"keccak256\":\"0x6f81c0cbc8907e0640c656f729db51ac5d70477877ae8453be93b0c27520bd57\",\"urls\":[\"bzz-raw://f3982a0b3caf2152b664b341bdb99145bba4892afbed30eefff937fcaf52a308\",\"dweb:/ipfs/QmP7LTRyagfA43h4keWQ9CVbB8cyxnznDSNxT7BKTJnSTL\"]}},\"version\":1}",
+    "bytecode": "0x6080604052348015600f57600080fd5b5060ce8061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063db80813f14602d575b600080fd5b605660048036036020811015604157600080fd5b81019080803590602001909291905050506058565b005b806000819055507fb0a4d76c825dc814a59c1a90f520a677f3f0843980294ef90afe1d7616a1cf70816040518082815260200191505060405180910390a15056fea265627a7a7231582028ec28abf8fda16aafd31dd4acf002a912e7070567491ef426c739a57202567964736f6c63430005100032",
+    "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063db80813f14602d575b600080fd5b605660048036036020811015604157600080fd5b81019080803590602001909291905050506058565b005b806000819055507fb0a4d76c825dc814a59c1a90f520a677f3f0843980294ef90afe1d7616a1cf70816040518082815260200191505060405180910390a15056fea265627a7a7231582028ec28abf8fda16aafd31dd4acf002a912e7070567491ef426c739a57202567964736f6c63430005100032",
+    "sourceMap": "73:176:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;73:176:0;;;;;;;",
+    "deployedSourceMap": "73:176:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;73:176:0;;;;;;;;;;;;;;;;;;;150:97;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;150:97:0;;;;;;;;;;;;;;;;;:::i;:::-;;;202:5;195:4;:12;;;;222:18;234:5;222:18;;;;;;;;;;;;;;;;;;150:97;:::o",
+    "source": "pragma solidity >=0.4.21 <0.7.0;\n\n// Stores the name of the current bear\ncontract Bear {\n    bytes32 name;\n\n    event NameChanged(bytes32 name);\n\n    function set(bytes32 _name) public {\n        name = _name;\n        emit NameChanged(_name);\n    }\n}\n",
+    "sourcePath": "/home/kyle/Playground/solidity/decent-challenge/contracts/Bear.sol",
+    "ast": {
+        "absolutePath": "/home/kyle/Playground/solidity/decent-challenge/contracts/Bear.sol",
+        "exportedSymbols": {
+            "Bear": [22]
+        },
+        "id": 23,
+        "nodeType": "SourceUnit",
+        "nodes": [
+            {
+                "id": 1,
+                "literals": ["solidity", ">=", "0.4", ".21", "<", "0.7", ".0"],
+                "nodeType": "PragmaDirective",
+                "src": "0:32:0"
+            },
+            {
+                "baseContracts": [],
+                "contractDependencies": [],
+                "contractKind": "contract",
+                "documentation": null,
+                "fullyImplemented": true,
+                "id": 22,
+                "linearizedBaseContracts": [22],
+                "name": "Bear",
+                "nodeType": "ContractDefinition",
+                "nodes": [
+                    {
+                        "constant": false,
+                        "id": 3,
+                        "name": "name",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 22,
+                        "src": "93:12:0",
+                        "stateVariable": true,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                        },
+                        "typeName": {
+                            "id": 2,
+                            "name": "bytes32",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "93:7:0",
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_bytes32",
+                                "typeString": "bytes32"
+                            }
+                        },
+                        "value": null,
+                        "visibility": "internal"
+                    },
+                    {
+                        "anonymous": false,
+                        "documentation": null,
+                        "id": 7,
+                        "name": "NameChanged",
+                        "nodeType": "EventDefinition",
+                        "parameters": {
+                            "id": 6,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 5,
+                                    "indexed": false,
+                                    "name": "name",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 7,
+                                    "src": "130:12:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_bytes32",
+                                        "typeString": "bytes32"
+                                    },
+                                    "typeName": {
+                                        "id": 4,
+                                        "name": "bytes32",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "130:7:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bytes32",
+                                            "typeString": "bytes32"
+                                        }
+                                    },
+                                    "value": null,
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "129:14:0"
+                        },
+                        "src": "112:32:0"
+                    },
+                    {
+                        "body": {
+                            "id": 20,
+                            "nodeType": "Block",
+                            "src": "185:62:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "argumentTypes": null,
+                                        "id": 14,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "argumentTypes": null,
+                                            "id": 12,
+                                            "name": "name",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 3,
+                                            "src": "195:4:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_bytes32",
+                                                "typeString": "bytes32"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "argumentTypes": null,
+                                            "id": 13,
+                                            "name": "_name",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 9,
+                                            "src": "202:5:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_bytes32",
+                                                "typeString": "bytes32"
+                                            }
+                                        },
+                                        "src": "195:12:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bytes32",
+                                            "typeString": "bytes32"
+                                        }
+                                    },
+                                    "id": 15,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "195:12:0"
+                                },
+                                {
+                                    "eventCall": {
+                                        "argumentTypes": null,
+                                        "arguments": [
+                                            {
+                                                "argumentTypes": null,
+                                                "id": 17,
+                                                "name": "_name",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 9,
+                                                "src": "234:5:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bytes32",
+                                                    "typeString": "bytes32"
+                                                }
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_bytes32",
+                                                    "typeString": "bytes32"
+                                                }
+                                            ],
+                                            "id": 16,
+                                            "name": "NameChanged",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 7,
+                                            "src": "222:11:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_event_nonpayable$_t_bytes32_$returns$__$",
+                                                "typeString": "function (bytes32)"
+                                            }
+                                        },
+                                        "id": 18,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "222:18:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 19,
+                                    "nodeType": "EmitStatement",
+                                    "src": "217:23:0"
+                                }
+                            ]
+                        },
+                        "documentation": null,
+                        "id": 21,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "set",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 10,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 9,
+                                    "name": "_name",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 21,
+                                    "src": "163:13:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_bytes32",
+                                        "typeString": "bytes32"
+                                    },
+                                    "typeName": {
+                                        "id": 8,
+                                        "name": "bytes32",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "163:7:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bytes32",
+                                            "typeString": "bytes32"
+                                        }
+                                    },
+                                    "value": null,
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "162:15:0"
+                        },
+                        "returnParameters": {
+                            "id": 11,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "185:0:0"
+                        },
+                        "scope": 22,
+                        "src": "150:97:0",
+                        "stateMutability": "nonpayable",
+                        "superFunction": null,
+                        "visibility": "public"
+                    }
+                ],
+                "scope": 23,
+                "src": "73:176:0"
+            }
+        ],
+        "src": "0:250:0"
+    },
+    "legacyAST": {
         "attributes": {
-          "baseContracts": [
-            null
-          ],
-          "contractDependencies": [
-            null
-          ],
-          "contractKind": "contract",
-          "documentation": null,
-          "fullyImplemented": true,
-          "linearizedBaseContracts": [
-            22
-          ],
-          "name": "Bear",
-          "scope": 23
+            "absolutePath": "/home/kyle/Playground/solidity/decent-challenge/contracts/Bear.sol",
+            "exportedSymbols": {
+                "Bear": [22]
+            }
         },
         "children": [
-          {
-            "attributes": {
-              "constant": false,
-              "name": "name",
-              "scope": 22,
-              "stateVariable": true,
-              "storageLocation": "default",
-              "type": "bytes32",
-              "value": null,
-              "visibility": "internal"
-            },
-            "children": [
-              {
+            {
                 "attributes": {
-                  "name": "bytes32",
-                  "type": "bytes32"
+                    "literals": [
+                        "solidity",
+                        ">=",
+                        "0.4",
+                        ".21",
+                        "<",
+                        "0.7",
+                        ".0"
+                    ]
                 },
-                "id": 2,
-                "name": "ElementaryTypeName",
-                "src": "93:7:0"
-              }
-            ],
-            "id": 3,
-            "name": "VariableDeclaration",
-            "src": "93:12:0"
-          },
-          {
-            "attributes": {
-              "anonymous": false,
-              "documentation": null,
-              "name": "NameChanged"
+                "id": 1,
+                "name": "PragmaDirective",
+                "src": "0:32:0"
             },
-            "children": [
-              {
-                "children": [
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "indexed": false,
-                      "name": "name",
-                      "scope": 7,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "bytes32",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "bytes32",
-                          "type": "bytes32"
-                        },
-                        "id": 4,
-                        "name": "ElementaryTypeName",
-                        "src": "130:7:0"
-                      }
-                    ],
-                    "id": 5,
-                    "name": "VariableDeclaration",
-                    "src": "130:12:0"
-                  }
-                ],
-                "id": 6,
-                "name": "ParameterList",
-                "src": "129:14:0"
-              }
-            ],
-            "id": 7,
-            "name": "EventDefinition",
-            "src": "112:32:0"
-          },
-          {
-            "attributes": {
-              "documentation": null,
-              "implemented": true,
-              "isConstructor": false,
-              "kind": "function",
-              "modifiers": [
-                null
-              ],
-              "name": "set",
-              "scope": 22,
-              "stateMutability": "nonpayable",
-              "superFunction": null,
-              "visibility": "public"
-            },
-            "children": [
-              {
-                "children": [
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "_name",
-                      "scope": 21,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "bytes32",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "bytes32",
-                          "type": "bytes32"
-                        },
-                        "id": 8,
-                        "name": "ElementaryTypeName",
-                        "src": "163:7:0"
-                      }
-                    ],
-                    "id": 9,
-                    "name": "VariableDeclaration",
-                    "src": "163:13:0"
-                  }
-                ],
-                "id": 10,
-                "name": "ParameterList",
-                "src": "162:15:0"
-              },
-              {
+            {
                 "attributes": {
-                  "parameters": [
-                    null
-                  ]
+                    "baseContracts": [null],
+                    "contractDependencies": [null],
+                    "contractKind": "contract",
+                    "documentation": null,
+                    "fullyImplemented": true,
+                    "linearizedBaseContracts": [22],
+                    "name": "Bear",
+                    "scope": 23
                 },
-                "children": [],
-                "id": 11,
-                "name": "ParameterList",
-                "src": "185:0:0"
-              },
-              {
                 "children": [
-                  {
-                    "children": [
-                      {
+                    {
                         "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "operator": "=",
-                          "type": "bytes32"
+                            "constant": false,
+                            "name": "name",
+                            "scope": 22,
+                            "stateVariable": true,
+                            "storageLocation": "default",
+                            "type": "bytes32",
+                            "value": null,
+                            "visibility": "internal"
                         },
                         "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 3,
-                              "type": "bytes32",
-                              "value": "name"
-                            },
-                            "id": 12,
-                            "name": "Identifier",
-                            "src": "195:4:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 9,
-                              "type": "bytes32",
-                              "value": "_name"
-                            },
-                            "id": 13,
-                            "name": "Identifier",
-                            "src": "202:5:0"
-                          }
+                            {
+                                "attributes": {
+                                    "name": "bytes32",
+                                    "type": "bytes32"
+                                },
+                                "id": 2,
+                                "name": "ElementaryTypeName",
+                                "src": "93:7:0"
+                            }
                         ],
-                        "id": 14,
-                        "name": "Assignment",
-                        "src": "195:12:0"
-                      }
-                    ],
-                    "id": 15,
-                    "name": "ExpressionStatement",
-                    "src": "195:12:0"
-                  },
-                  {
-                    "children": [
-                      {
+                        "id": 3,
+                        "name": "VariableDeclaration",
+                        "src": "93:12:0"
+                    },
+                    {
                         "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "isStructConstructorCall": false,
-                          "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
-                          "type": "tuple()",
-                          "type_conversion": false
+                            "anonymous": false,
+                            "documentation": null,
+                            "name": "NameChanged"
                         },
                         "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": [
-                                {
-                                  "typeIdentifier": "t_bytes32",
-                                  "typeString": "bytes32"
-                                }
-                              ],
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 7,
-                              "type": "function (bytes32)",
-                              "value": "NameChanged"
-                            },
-                            "id": 16,
-                            "name": "Identifier",
-                            "src": "222:11:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 9,
-                              "type": "bytes32",
-                              "value": "_name"
-                            },
-                            "id": 17,
-                            "name": "Identifier",
-                            "src": "234:5:0"
-                          }
+                            {
+                                "children": [
+                                    {
+                                        "attributes": {
+                                            "constant": false,
+                                            "indexed": false,
+                                            "name": "name",
+                                            "scope": 7,
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "type": "bytes32",
+                                            "value": null,
+                                            "visibility": "internal"
+                                        },
+                                        "children": [
+                                            {
+                                                "attributes": {
+                                                    "name": "bytes32",
+                                                    "type": "bytes32"
+                                                },
+                                                "id": 4,
+                                                "name": "ElementaryTypeName",
+                                                "src": "130:7:0"
+                                            }
+                                        ],
+                                        "id": 5,
+                                        "name": "VariableDeclaration",
+                                        "src": "130:12:0"
+                                    }
+                                ],
+                                "id": 6,
+                                "name": "ParameterList",
+                                "src": "129:14:0"
+                            }
                         ],
-                        "id": 18,
-                        "name": "FunctionCall",
-                        "src": "222:18:0"
-                      }
-                    ],
-                    "id": 19,
-                    "name": "EmitStatement",
-                    "src": "217:23:0"
-                  }
+                        "id": 7,
+                        "name": "EventDefinition",
+                        "src": "112:32:0"
+                    },
+                    {
+                        "attributes": {
+                            "documentation": null,
+                            "implemented": true,
+                            "isConstructor": false,
+                            "kind": "function",
+                            "modifiers": [null],
+                            "name": "set",
+                            "scope": 22,
+                            "stateMutability": "nonpayable",
+                            "superFunction": null,
+                            "visibility": "public"
+                        },
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "attributes": {
+                                            "constant": false,
+                                            "name": "_name",
+                                            "scope": 21,
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "type": "bytes32",
+                                            "value": null,
+                                            "visibility": "internal"
+                                        },
+                                        "children": [
+                                            {
+                                                "attributes": {
+                                                    "name": "bytes32",
+                                                    "type": "bytes32"
+                                                },
+                                                "id": 8,
+                                                "name": "ElementaryTypeName",
+                                                "src": "163:7:0"
+                                            }
+                                        ],
+                                        "id": 9,
+                                        "name": "VariableDeclaration",
+                                        "src": "163:13:0"
+                                    }
+                                ],
+                                "id": 10,
+                                "name": "ParameterList",
+                                "src": "162:15:0"
+                            },
+                            {
+                                "attributes": {
+                                    "parameters": [null]
+                                },
+                                "children": [],
+                                "id": 11,
+                                "name": "ParameterList",
+                                "src": "185:0:0"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "children": [
+                                            {
+                                                "attributes": {
+                                                    "argumentTypes": null,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "operator": "=",
+                                                    "type": "bytes32"
+                                                },
+                                                "children": [
+                                                    {
+                                                        "attributes": {
+                                                            "argumentTypes": null,
+                                                            "overloadedDeclarations": [
+                                                                null
+                                                            ],
+                                                            "referencedDeclaration": 3,
+                                                            "type": "bytes32",
+                                                            "value": "name"
+                                                        },
+                                                        "id": 12,
+                                                        "name": "Identifier",
+                                                        "src": "195:4:0"
+                                                    },
+                                                    {
+                                                        "attributes": {
+                                                            "argumentTypes": null,
+                                                            "overloadedDeclarations": [
+                                                                null
+                                                            ],
+                                                            "referencedDeclaration": 9,
+                                                            "type": "bytes32",
+                                                            "value": "_name"
+                                                        },
+                                                        "id": 13,
+                                                        "name": "Identifier",
+                                                        "src": "202:5:0"
+                                                    }
+                                                ],
+                                                "id": 14,
+                                                "name": "Assignment",
+                                                "src": "195:12:0"
+                                            }
+                                        ],
+                                        "id": 15,
+                                        "name": "ExpressionStatement",
+                                        "src": "195:12:0"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "attributes": {
+                                                    "argumentTypes": null,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "isStructConstructorCall": false,
+                                                    "lValueRequested": false,
+                                                    "names": [null],
+                                                    "type": "tuple()",
+                                                    "type_conversion": false
+                                                },
+                                                "children": [
+                                                    {
+                                                        "attributes": {
+                                                            "argumentTypes": [
+                                                                {
+                                                                    "typeIdentifier": "t_bytes32",
+                                                                    "typeString": "bytes32"
+                                                                }
+                                                            ],
+                                                            "overloadedDeclarations": [
+                                                                null
+                                                            ],
+                                                            "referencedDeclaration": 7,
+                                                            "type": "function (bytes32)",
+                                                            "value": "NameChanged"
+                                                        },
+                                                        "id": 16,
+                                                        "name": "Identifier",
+                                                        "src": "222:11:0"
+                                                    },
+                                                    {
+                                                        "attributes": {
+                                                            "argumentTypes": null,
+                                                            "overloadedDeclarations": [
+                                                                null
+                                                            ],
+                                                            "referencedDeclaration": 9,
+                                                            "type": "bytes32",
+                                                            "value": "_name"
+                                                        },
+                                                        "id": 17,
+                                                        "name": "Identifier",
+                                                        "src": "234:5:0"
+                                                    }
+                                                ],
+                                                "id": 18,
+                                                "name": "FunctionCall",
+                                                "src": "222:18:0"
+                                            }
+                                        ],
+                                        "id": 19,
+                                        "name": "EmitStatement",
+                                        "src": "217:23:0"
+                                    }
+                                ],
+                                "id": 20,
+                                "name": "Block",
+                                "src": "185:62:0"
+                            }
+                        ],
+                        "id": 21,
+                        "name": "FunctionDefinition",
+                        "src": "150:97:0"
+                    }
                 ],
-                "id": 20,
-                "name": "Block",
-                "src": "185:62:0"
-              }
-            ],
-            "id": 21,
-            "name": "FunctionDefinition",
-            "src": "150:97:0"
-          }
+                "id": 22,
+                "name": "ContractDefinition",
+                "src": "73:176:0"
+            }
         ],
-        "id": 22,
-        "name": "ContractDefinition",
-        "src": "73:176:0"
-      }
-    ],
-    "id": 23,
-    "name": "SourceUnit",
-    "src": "0:250:0"
-  },
-  "compiler": {
-    "name": "solc",
-    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
-  },
-  "networks": {
-    "5777": {
-      "events": {},
-      "links": {},
-      "address": "0x75444D0D94354457de9B611F065Ed03dDD43Af9A",
-      "transactionHash": "0x2a77dde1d54c5872d4c3ddd151c68774922cc19bfb3296b9c0f132c3cfa50576"
+        "id": 23,
+        "name": "SourceUnit",
+        "src": "0:250:0"
+    },
+    "compiler": {
+        "name": "solc",
+        "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+    },
+    "networks": {
+        "5777": {
+            "events": {},
+            "links": {},
+            "address": "0x75444D0D94354457de9B611F065Ed03dDD43Af9A",
+            "transactionHash": "0x2a77dde1d54c5872d4c3ddd151c68774922cc19bfb3296b9c0f132c3cfa50576"
+        }
+    },
+    "schemaVersion": "3.4.1",
+    "updatedAt": "2021-08-07T15:02:47.385Z",
+    "networkType": "ethereum",
+    "devdoc": {
+        "methods": {}
+    },
+    "userdoc": {
+        "methods": {}
     }
-  },
-  "schemaVersion": "3.4.1",
-  "updatedAt": "2021-08-07T15:02:47.385Z",
-  "networkType": "ethereum",
-  "devdoc": {
-    "methods": {}
-  },
-  "userdoc": {
-    "methods": {}
-  }
 }
