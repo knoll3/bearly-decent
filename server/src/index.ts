@@ -3,9 +3,7 @@ import mongoose from "mongoose";
 import http from "http";
 import { Server, Socket } from "socket.io";
 import cors from "cors";
-import Web3 from "web3";
-import { Contract } from "web3-eth-contract";
-import BearAbi from "./contracts/Bear.json";
+import "./events/Bear";
 
 const port = 8080;
 const mongoUrl = "mongodb://localhost:27017/bears";
@@ -47,42 +45,3 @@ io.on("connection", (socket) => {
 server.listen(port, () => {
     console.log(`server started at http://localhost:${port}`);
 });
-
-async function getBearInstance(): Promise<Contract> {
-    const BearContract = BearAbi as any;
-    try {
-        const provider = new Web3.providers.WebsocketProvider(
-            "http://127.0.0.1:7545"
-        );
-        const web3 = new Web3(provider);
-        const networkId = await web3.eth.net.getId();
-        const deployedNetwork = BearContract.networks[networkId];
-        const instance = new web3.eth.Contract(
-            BearContract.abi,
-            deployedNetwork && deployedNetwork.address
-        );
-        return instance;
-    } catch (error) {
-        console.error(error);
-    }
-}
-
-// temp
-(async () => {
-    const BearInstance = await getBearInstance();
-
-    BearInstance.events
-        .NameChanged({}, function (error: any, event: any) {
-            if (error) console.log(error);
-            console.log(event);
-        })
-        .on("connected", function (subscriptionId: any) {
-            console.log(subscriptionId);
-        })
-        .on("data", function (event: any) {
-            // console.log(event);
-        })
-        .on("error", function (error: any, receipt: any) {
-            console.log(error);
-        });
-})();
