@@ -11,7 +11,10 @@ export function useFindBears(currentBear: Bear | null) {
         fetch(url)
             .then((res) => res.json())
             .then((res) => {
-                console.log(res);
+                const _bears: Bear[] = res.map((b: any) => ({
+                    name: b["name"],
+                }));
+                setBears(_bears);
             });
     }, [currentBear]);
 
