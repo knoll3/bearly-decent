@@ -3,7 +3,8 @@ import mongoose from "mongoose";
 import http from "http";
 import { Server, Socket } from "socket.io";
 import cors from "cors";
-import "./events/Bear";
+// import "./events/Bear";
+import { BearInstance } from "./getContract";
 
 const port = 8080;
 const mongoUrl = "mongodb://localhost:27017/bears";
@@ -19,25 +20,17 @@ mongoose.connect(mongoUrl, {
     useUnifiedTopology: true,
 });
 
-const server = http.createServer(app);
+export const server = http.createServer(app);
 const io = new Server(server);
 
 let interval: NodeJS.Timer;
 
-const getApiAndEmit = (socket: Socket) => {
-    const response = new Date();
-    socket.emit("FromAPI", response);
-};
-
 io.on("connection", (socket) => {
     console.log("New client connected");
-    if (interval) {
-        clearInterval(interval);
-    }
-    interval = setInterval(() => getApiAndEmit(socket), 1000);
-    socket.on("disconnect", () => {
-        console.log("Client disconnected");
-        clearInterval(interval);
+    BearInstance.events.NameChanged(function (error: any, event: any) {
+        if (error) console.log(error);
+        socket.emit("FromAPI", JSON.stringify(event));
+        console.log(event);
     });
 });
 
