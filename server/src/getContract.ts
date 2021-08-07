@@ -6,7 +6,7 @@ const contractAddress = "0x75444D0D94354457de9B611F065Ed03dDD43Af9A";
 
 const BearContract = BearAbi as any;
 const provider = new Web3.providers.WebsocketProvider(providerUrl);
-const web3 = new Web3(provider);
+export const web3 = new Web3(provider);
 
 export const BearInstance = new web3.eth.Contract(
     BearContract.abi,
