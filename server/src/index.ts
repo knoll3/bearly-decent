@@ -3,8 +3,8 @@ import mongoose from "mongoose";
 import http from "http";
 import cors from "cors";
 import { Server } from "socket.io";
+import { DeleteAllBears, GetBears } from "./controllers/Bear";
 import { EventsListener } from "./events";
-import { GetBears } from "./controllers/Bear";
 
 const port = 8080;
 const mongoUrl = "mongodb://localhost:27017/bears";
@@ -31,3 +31,4 @@ mongoose.connect(mongoUrl, {
 
 // Routes
 app.get("/bears", GetBears);
+app.delete("/bears", DeleteAllBears);
