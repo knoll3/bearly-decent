@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import styles from "./index.module.css";
-import socketIOClient from "socket.io-client";
 import { io } from "socket.io-client";
 import { useWeb3 } from "hooks/useWeb3";
 import { useBearInstance } from "hooks/useBearInstance";
@@ -17,7 +16,7 @@ export const HomePage: React.FC = () => {
             transports: ["websocket"],
         });
 
-        socket.on("FromAPI", (data) => {
+        socket.on("NameChanged", (data) => {
             setResponse(data);
         });
         return () => {
@@ -37,7 +36,7 @@ export const HomePage: React.FC = () => {
 
     return (
         <div className={styles.home}>
-            <div>{response}</div>
+            <div>{JSON.stringify(response, null, 2)}</div>
             <button onClick={onChangeName}>Change Name</button>
         </div>
     );
