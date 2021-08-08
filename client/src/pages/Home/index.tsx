@@ -5,11 +5,11 @@ import { useBearInstance } from "hooks/useBearInstance";
 import { useSocket } from "hooks/useSocket";
 import { useBear } from "hooks/useBear";
 import { useFindBears } from "hooks/useFindBears";
-import { fromAscii } from "web3-utils";
 import { Form } from "components/Form";
-import { BearSelection } from "components/BearSelection";
 import { BearHistory } from "components/BearHistory";
 import decentBear from "decent-bear.png";
+import { SpeechBubble } from "components/SpeechBubble";
+import { useSpeechBubble } from "hooks/useSpeechBubble";
 
 // End point to api server
 const ENDPOINT = "http://localhost:8080";
@@ -33,24 +33,8 @@ export const HomePage: React.FC = () => {
     // Get all bears from backend api
     const [bears, setBears] = useFindBears(currentBear);
 
-    const [inputValue, setInputValue] = React.useState("");
-
-    const onChangeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setInputValue(event.target.value);
-    };
-
-    // Call the set() method in the smart contract when the submit
-    // button is pressed
-    const onInputSubmit = async (
-        event: React.MouseEvent<HTMLButtonElement>
-    ) => {
-        if (!instance) return;
-        await instance.methods
-            .set(fromAscii(inputValue))
-            .send({ from: USER_ADDRESS });
-    };
-
-    const buttonDisabled = inputValue.trim().length === 0;
+    // Handle the speech bubble transition when currentBear changes
+    const bubbleRef = useSpeechBubble(currentBear);
 
     const onDeleteAll = () => {
         fetch(`${ENDPOINT}/bears`, {
@@ -63,13 +47,15 @@ export const HomePage: React.FC = () => {
 
     return (
         <div className={styles.home}>
-            <img
-                className={styles.bearimg}
-                src={decentBear}
-                alt="decent-bear"
-            />
+            <div className={styles.decentBear}>
+                <img
+                    className={styles.bearimg}
+                    src={decentBear}
+                    alt="decent-bear"
+                />
+                <SpeechBubble currentBear={currentBear} bubbleRef={bubbleRef} />
+            </div>
             <Form instance={instance} userAddress={USER_ADDRESS} />
-            <BearSelection currentBear={currentBear} />
             <div className={styles.hRule} />
             <BearHistory bears={bears} onDeleteAll={onDeleteAll} />
         </div>

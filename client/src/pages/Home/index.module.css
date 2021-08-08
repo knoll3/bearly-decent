@@ -7,7 +7,7 @@
     flex-direction: column;
     align-items: flex-start;
     position: relative;
-    margin-top: 150px;
+    margin-top: 175px;
 }
 
 .hRule {
@@ -18,9 +18,12 @@
 }
 
 .bearimg {
-    position: fixed;
     height: auto;
     width: 300px;
-    top: 25px;
+}
+
+.decentBear {
+    position: fixed;
+    top: 60px;
     left: calc(50% - 210px);
 }

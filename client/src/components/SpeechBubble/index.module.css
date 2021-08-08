@@ -1,0 +1,38 @@
+.speechBubble {
+    left: 80px;
+    top: -45px;
+    height: 16px;
+    width: 175px;
+    padding: 1em;
+    font-size: 0.8rem;
+
+    transform-origin: 0% 100%;
+    transform: scale(0);
+    animation-fill-mode: forwards;
+
+    transition-property: transform;
+
+    position: absolute;
+    background: #ddd;
+    color: #282c34;
+    font-weight: bold;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hacky speech bubble tail */
+/* https://codepen.io/KhaledAhmedYounes/pen/xXqYGY */
+.speechBubble::before {
+    content: "";
+    display: block;
+    width: 0;
+    position: absolute;
+    bottom: -15px;
+    left: 5px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: #ddd transparent transparent #ddd;
+    transform: rotate(10deg);
+}
