@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { Bear } from "types/Bear";
 import { Socket } from "socket.io-client";
 
-export function useBear(socket: Socket | null): Bear | null {
+export function useBear(
+    socket: Socket | null
+): [Bear | null, React.Dispatch<React.SetStateAction<Bear | null>>] {
     const [bear, setBear] = useState<Bear | null>(null);
 
     const onNameChangedEvent = (data: any) => {
@@ -21,5 +23,5 @@ export function useBear(socket: Socket | null): Bear | null {
         };
     }, [socket]);
 
-    return bear;
+    return [bear, setBear];
 }

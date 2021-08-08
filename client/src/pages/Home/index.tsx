@@ -21,7 +21,7 @@ export const HomePage: React.FC = () => {
     const web3 = useWeb3();
     const instance = useBearInstance(web3);
     const socket = useSocket(ENDPOINT);
-    const currentBear = useBear(socket);
+    const [currentBear, setCurrentBear] = useBear(socket);
     const [bears, setBears] = useFindBears(currentBear);
 
     const [value, setValue] = React.useState("");
@@ -46,6 +46,7 @@ export const HomePage: React.FC = () => {
             method: "DELETE",
         }).then(() => {
             setBears([]);
+            setCurrentBear(null);
         });
     };
 
