@@ -1,0 +1,36 @@
+.tableContainer {
+    border: 1px solid rgba(100, 100, 100, 0.4);
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #aaa;
+}
+
+.table thead th {
+    background: #282c34;
+    position: sticky;
+    top: 0;
+    text-align: left;
+}
+
+.table tr:hover {
+    background: #343a45;
+}
+
+.table td {
+    cursor: pointer;
+    border-bottom: 1px solid rgba(100, 100, 100, 0.4);
+    padding: 0.5em 1em 0.5em 1em;
+    text-align: left;
+}
+
+.thead {
+    padding: 0.5em 1em 0.5em 1em;
+    border-bottom: 1px solid #ac54ff;
+}
