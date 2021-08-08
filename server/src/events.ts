@@ -11,6 +11,7 @@ export const EventsListener = (socket: Socket) => {
 
             const newBear = new Bear({
                 name: value,
+                hash: web3.utils.sha3(value),
             });
 
             // Add the new bear to the list of bears
@@ -18,6 +19,7 @@ export const EventsListener = (socket: Socket) => {
 
             const bear = {
                 name: bearDoc.name,
+                hash: bearDoc.hash,
             };
 
             socket.emit("NameChanged", bear);

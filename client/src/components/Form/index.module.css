@@ -40,30 +40,3 @@
     border: 1px solid #fff;
     box-shadow: 0px 0px 8px 2px #ac54ff;
 }
-
-.button {
-    border: none;
-    background: #ac54ff;
-    outline-width: 0;
-    padding: 0.5em 2em 0.5em 2em;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    color: #282c34;
-    transition: all 0.1s;
-}
-
-.button:hover {
-    background: #8d45d1;
-}
-
-.disabledButton {
-    border: none;
-    background: #5c626e;
-    outline-width: 0;
-    padding: 0.5em 2em 0.5em 2em;
-    border-radius: 4px;
-    font-weight: bold;
-    color: #282c34;
-    transition: all 0.1s;
-}

@@ -1,3 +1,16 @@
+.actionRow {
+    display: flex;
+    align-items: center;
+    margin: 24px 0 24px 0;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.historyTitle {
+    font-size: 20px;
+    margin-right: 1em;
+}
+
 .tableContainer {
     border: 1px solid rgba(100, 100, 100, 0.4);
     border-radius: 4px;
@@ -28,6 +41,8 @@
     border-bottom: 1px solid rgba(100, 100, 100, 0.4);
     padding: 0.5em 1em 0.5em 1em;
     text-align: left;
+    font-size: 0.9rem;
+    font-family: monospace;
 }
 
 .thead {

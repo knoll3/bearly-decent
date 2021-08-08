@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { Bear } from "types/Bear";
 
-export function useFindBears(currentBear: Bear | null) {
+export function useFindBears(
+    currentBear: Bear | null
+): [Bear[], React.Dispatch<React.SetStateAction<Bear[]>>] {
     const url = "http://localhost:8080/bears";
 
     const [bears, setBears] = useState<Bear[]>([]);
@@ -13,10 +15,11 @@ export function useFindBears(currentBear: Bear | null) {
             .then((res) => {
                 const _bears: Bear[] = res.map((b: any) => ({
                     name: b["name"],
+                    hash: b["hash"],
                 }));
                 setBears(_bears.reverse());
             });
     }, [currentBear]);
 
-    return bears;
+    return [bears, setBears];
 }
