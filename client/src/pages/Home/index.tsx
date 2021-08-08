@@ -6,6 +6,9 @@ import { useSocket } from "hooks/useSocket";
 import { useBear } from "hooks/useBear";
 import { useFindBears } from "hooks/useFindBears";
 import { fromAscii } from "web3-utils";
+import { Form } from "components/Form";
+import { BearSelection } from "components/BearSelection";
+import { BearHistory } from "components/BearHistory";
 
 // End point to api server
 const ENDPOINT = "http://localhost:8080";
@@ -40,61 +43,10 @@ export const HomePage: React.FC = () => {
     return (
         <div className={styles.home}>
             <h2>Bears</h2>
-            <div className={styles.formContainer}>
-                <div className={styles.inputLabel}>
-                    Input the name of a bear
-                </div>
-                <div className={styles.inputContainer}>
-                    <input
-                        value={value}
-                        onChange={onChangeValue}
-                        type="text"
-                        className={styles.input}
-                    />
-                    <button
-                        disabled={buttonDisabled}
-                        className={
-                            buttonDisabled
-                                ? styles.disabledButton
-                                : styles.button
-                        }
-                        onClick={onInputSubmit}
-                    >
-                        Apply
-                    </button>
-                </div>
-            </div>
-            <div className={styles.bearSelection}>
-                Currently selected bear
-                <span className={styles.marginLeft}>:</span>
-                <span className={styles.bearName}>
-                    {currentBear ? currentBear.name : ""}
-                </span>
-            </div>
+            <Form instance={instance} userAddress={USER_ADDRESS} />
+            <BearSelection currentBear={currentBear} />
             <div className={styles.hRule} />
-            <h4>History</h4>
-            <div className={styles.tableContainer}>
-                <table className={styles.table}>
-                    <thead>
-                        <tr>
-                            <th>
-                                <div className={styles.thead}>Name</div>
-                            </th>
-                            <th>
-                                <div className={styles.thead}>Hash</div>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {bears.map((bear, i) => (
-                            <tr key={`key-${i}`}>
-                                <td>{bear.name}</td>
-                                <td>llk</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+            <BearHistory bears={bears} />
         </div>
     );
 };

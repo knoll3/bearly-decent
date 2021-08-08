@@ -14,7 +14,7 @@ export function useFindBears(currentBear: Bear | null) {
                 const _bears: Bear[] = res.map((b: any) => ({
                     name: b["name"],
                 }));
-                setBears(_bears);
+                setBears(_bears.reverse());
             });
     }, [currentBear]);
 
