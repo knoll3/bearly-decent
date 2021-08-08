@@ -10,7 +10,7 @@ export const EventsListener = (socket: Socket) => {
             const value = web3.utils.hexToString(hex);
 
             const newBear = new Bear({
-                name: value,
+                name: `${value} Bear`,
                 hash: web3.utils.sha3(value),
             });
 
