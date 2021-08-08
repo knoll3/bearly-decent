@@ -9,6 +9,7 @@ import { fromAscii } from "web3-utils";
 import { Form } from "components/Form";
 import { BearSelection } from "components/BearSelection";
 import { BearHistory } from "components/BearHistory";
+import decentBear from "decent-bear.png";
 
 // End point to api server
 const ENDPOINT = "http://localhost:8080";
@@ -42,7 +43,12 @@ export const HomePage: React.FC = () => {
 
     return (
         <div className={styles.home}>
-            <h2>Bears</h2>
+            <img
+                className={styles.bearimg}
+                src={decentBear}
+                alt="decent-bear"
+            />
+            <h2>Decent Bear</h2>
             <Form instance={instance} userAddress={USER_ADDRESS} />
             <BearSelection currentBear={currentBear} />
             <div className={styles.hRule} />
