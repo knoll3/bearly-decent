@@ -19,7 +19,7 @@ export const Form: React.FC<FormProps> = ({ instance, userAddress }) => {
     const onInputSubmit = async () => {
         if (!instance) return;
         await instance.methods
-            .set(fromAscii(value))
+            .set(fromAscii(value.trim()))
             .send({ from: userAddress });
         setValue("");
     };
@@ -32,7 +32,9 @@ export const Form: React.FC<FormProps> = ({ instance, userAddress }) => {
 
     return (
         <div className={styles.formContainer}>
-            <div className={styles.inputLabel}>Input the name of a bear</div>
+            <div className={styles.inputLabel}>
+                Give us a PAWESOME adjective
+            </div>
             <div className={styles.inputContainer}>
                 <input
                     value={value}
@@ -40,6 +42,7 @@ export const Form: React.FC<FormProps> = ({ instance, userAddress }) => {
                     type="text"
                     className={styles.input}
                     onKeyPress={onKeyPress}
+                    maxLength={30}
                 />
                 <Button onClick={onInputSubmit} disabled={buttonDisabled}>
                     Apply

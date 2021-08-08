@@ -18,12 +18,11 @@ export const BearSelection: React.FC<BearSelectionProps> = ({
 
     return (
         <div className={styles.bearSelection}>
-            Currently selected bear
-            <span className={styles.marginLeft}>:</span>
+            {currentBear ? "You are a" : ""}
             <span className={styles.bearName}>
                 {currentBear ? currentBear.name : ""}
             </span>
-            <span className={styles.bearName}>
+            <span className={styles.bearHash}>
                 {currentBear ? formatHash(currentBear.hash) : ""}
             </span>
         </div>
