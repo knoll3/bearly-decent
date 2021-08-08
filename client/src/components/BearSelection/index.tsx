@@ -6,9 +6,14 @@ interface BearSelectionProps {
     currentBear: Bear | null;
 }
 
+/**
+ * Show the currently selected bear. This is the bear that was just
+ * entered in the input box
+ */
 export const BearSelection: React.FC<BearSelectionProps> = ({
     currentBear,
 }) => {
+    // Cut the hash down into a sorter string
     const formatHash = useCallback(
         (hash: string): string => {
             return `${hash.substr(0, 6)}...${hash.substr(-4)}`;

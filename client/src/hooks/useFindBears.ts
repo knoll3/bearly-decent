@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { Bear } from "types/Bear";
 
+/**
+ * Loads all bears from the backend api endpoint
+ */
 export function useFindBears(
     currentBear: Bear | null
 ): [Bear[], React.Dispatch<React.SetStateAction<Bear[]>>] {

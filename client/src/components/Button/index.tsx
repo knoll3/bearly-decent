@@ -6,6 +6,9 @@ interface ButtonProps {
     disabled?: boolean;
 }
 
+/**
+ * A custom button
+ */
 export const Button: React.FC<ButtonProps> = ({
     children,
     onClick,

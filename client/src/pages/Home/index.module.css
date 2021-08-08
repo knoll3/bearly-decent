@@ -21,9 +21,6 @@
     position: fixed;
     height: auto;
     width: 300px;
-    /* top: -50px; */
     top: 25px;
     left: calc(50% - 210px);
-    /* top: 0; */
-    /* left: 0; */
 }

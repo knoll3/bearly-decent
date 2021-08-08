@@ -9,10 +9,14 @@ interface BearHistoryProps {
     onDeleteAll: React.MouseEventHandler<HTMLButtonElement>;
 }
 
+/**
+ * Shows the history of bears that have been added
+ */
 export const BearHistory: React.FC<BearHistoryProps> = ({
     bears,
     onDeleteAll,
 }) => {
+    // Cut the hash down into a sorter string
     const formatHash = useCallback(
         (hash: string): string => {
             return `${hash.substr(0, 6)}...${hash.substr(-4)}`;

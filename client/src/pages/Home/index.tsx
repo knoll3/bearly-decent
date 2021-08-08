@@ -18,31 +18,42 @@ const ENDPOINT = "http://localhost:8080";
 const USER_ADDRESS = "0x95f02C1A608ee38A4Eb8dC6704DE904FAAd196Db";
 
 export const HomePage: React.FC = () => {
+    // Load web3 to get a smart contract instance
     const web3 = useWeb3();
+
+    // Load a bear smart contract instance for calling contract methods
     const instance = useBearInstance(web3);
+
+    // Open a socket to receive the current bear from the backend api
     const socket = useSocket(ENDPOINT);
+
+    // Get the bear that was just created
     const [currentBear, setCurrentBear] = useBear(socket);
+
+    // Get all bears from backend api
     const [bears, setBears] = useFindBears(currentBear);
 
-    const [value, setValue] = React.useState("");
+    const [inputValue, setInputValue] = React.useState("");
 
     const onChangeValue = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setValue(event.target.value);
+        setInputValue(event.target.value);
     };
 
+    // Call the set() method in the smart contract when the submit
+    // button is pressed
     const onInputSubmit = async (
         event: React.MouseEvent<HTMLButtonElement>
     ) => {
         if (!instance) return;
         await instance.methods
-            .set(fromAscii(value))
+            .set(fromAscii(inputValue))
             .send({ from: USER_ADDRESS });
     };
 
-    const buttonDisabled = value.trim().length === 0;
+    const buttonDisabled = inputValue.trim().length === 0;
 
     const onDeleteAll = () => {
-        fetch("http://localhost:8080/bears", {
+        fetch(`${ENDPOINT}/bears`, {
             method: "DELETE",
         }).then(() => {
             setBears([]);
