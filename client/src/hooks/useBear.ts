@@ -8,6 +8,7 @@ export function useBear(socket: Socket | null): Bear | null {
     const onNameChangedEvent = (data: any) => {
         const bear: Bear = {
             name: data["name"],
+            hash: data["hash"],
         };
         setBear(bear);
     };

@@ -1,12 +1,13 @@
 .home {
     width: 650px;
-    height: 95vh;
+    height: 80vh;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     position: relative;
+    margin-top: 150px;
 }
 
 .hRule {
@@ -17,9 +18,12 @@
 }
 
 .bearimg {
-    position: absolute;
+    position: fixed;
     height: auto;
-    width: 100px;
-    left: -125px;
-    top: 0;
+    width: 300px;
+    /* top: -50px; */
+    top: 25px;
+    left: calc(50% - 210px);
+    /* top: 0; */
+    /* left: 0; */
 }

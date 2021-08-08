@@ -22,7 +22,7 @@ export const HomePage: React.FC = () => {
     const instance = useBearInstance(web3);
     const socket = useSocket(ENDPOINT);
     const currentBear = useBear(socket);
-    const bears = useFindBears(currentBear);
+    const [bears, setBears] = useFindBears(currentBear);
 
     const [value, setValue] = React.useState("");
 
@@ -41,6 +41,14 @@ export const HomePage: React.FC = () => {
 
     const buttonDisabled = value.trim().length === 0;
 
+    const onDeleteAll = () => {
+        fetch("http://localhost:8080/bears", {
+            method: "DELETE",
+        }).then(() => {
+            setBears([]);
+        });
+    };
+
     return (
         <div className={styles.home}>
             <img
@@ -48,11 +56,10 @@ export const HomePage: React.FC = () => {
                 src={decentBear}
                 alt="decent-bear"
             />
-            <h2>Decent Bear</h2>
             <Form instance={instance} userAddress={USER_ADDRESS} />
             <BearSelection currentBear={currentBear} />
             <div className={styles.hRule} />
-            <BearHistory bears={bears} />
+            <BearHistory bears={bears} onDeleteAll={onDeleteAll} />
         </div>
     );
 };

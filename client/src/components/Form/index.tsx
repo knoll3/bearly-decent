@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./index.module.css";
 import { Contract } from "web3-eth-contract";
 import { fromAscii } from "web3-utils";
+import { Button } from "components/Button";
 
 interface FormProps {
     instance: Contract | null;
@@ -15,13 +16,16 @@ export const Form: React.FC<FormProps> = ({ instance, userAddress }) => {
         setValue(event.target.value);
     };
 
-    const onInputSubmit = async (
-        event: React.MouseEvent<HTMLButtonElement>
-    ) => {
+    const onInputSubmit = async () => {
         if (!instance) return;
         await instance.methods
             .set(fromAscii(value))
             .send({ from: userAddress });
+        setValue("");
+    };
+
+    const onKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === "Enter") onInputSubmit();
     };
 
     const buttonDisabled = value.trim().length === 0;
@@ -35,16 +39,11 @@ export const Form: React.FC<FormProps> = ({ instance, userAddress }) => {
                     onChange={onChangeValue}
                     type="text"
                     className={styles.input}
+                    onKeyPress={onKeyPress}
                 />
-                <button
-                    disabled={buttonDisabled}
-                    className={
-                        buttonDisabled ? styles.disabledButton : styles.button
-                    }
-                    onClick={onInputSubmit}
-                >
+                <Button onClick={onInputSubmit} disabled={buttonDisabled}>
                     Apply
-                </button>
+                </Button>
             </div>
         </div>
     );

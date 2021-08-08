@@ -1,15 +1,33 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { Bear } from "types/Bear";
 import styles from "./index.module.css";
+import { Button } from "components/Button";
+import { useFindBears } from "hooks/useFindBears";
 
 interface BearHistoryProps {
     bears: Bear[];
+    onDeleteAll: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-export const BearHistory: React.FC<BearHistoryProps> = ({ bears }) => {
+export const BearHistory: React.FC<BearHistoryProps> = ({
+    bears,
+    onDeleteAll,
+}) => {
+    const formatHash = useCallback(
+        (hash: string): string => {
+            return `${hash.substr(0, 6)}...${hash.substr(-4)}`;
+        },
+        [bears]
+    );
+
     return (
         <React.Fragment>
-            <h4>History</h4>
+            <div className={styles.actionRow}>
+                <div className={styles.historyTitle}>History</div>
+                <Button onClick={onDeleteAll} disabled={bears.length === 0}>
+                    Delete All
+                </Button>
+            </div>
             <div className={styles.tableContainer}>
                 <table className={styles.table}>
                     <thead>
@@ -26,7 +44,7 @@ export const BearHistory: React.FC<BearHistoryProps> = ({ bears }) => {
                         {bears.map((bear, i) => (
                             <tr key={`key-${i}`}>
                                 <td>{bear.name}</td>
-                                <td>llk</td>
+                                <td>{formatHash(bear.hash)}</td>
                             </tr>
                         ))}
                     </tbody>
