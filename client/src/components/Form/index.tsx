@@ -9,6 +9,9 @@ interface FormProps {
     userAddress: string;
 }
 
+/**
+ * Just an input box and a button for creating a bear
+ */
 export const Form: React.FC<FormProps> = ({ instance, userAddress }) => {
     const [value, setValue] = React.useState("");
 

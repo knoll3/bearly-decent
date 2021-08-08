@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { Bear } from "types/Bear";
 import { Socket } from "socket.io-client";
 
+/**
+ * Loads the current bear
+ */
 export function useBear(
     socket: Socket | null
 ): [Bear | null, React.Dispatch<React.SetStateAction<Bear | null>>] {
@@ -18,6 +21,8 @@ export function useBear(
     useEffect(() => {
         if (!socket) return;
         socket.on("NameChanged", onNameChangedEvent);
+
+        // Turn the socket off when component unloads
         return () => {
             socket.off("NameChanged", onNameChangedEvent);
         };

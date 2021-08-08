@@ -12,6 +12,8 @@ code {
         monospace;
 }
 
+/* Add a custom scroll bar */
+
 /* width */
 ::-webkit-scrollbar {
     width: 7px;

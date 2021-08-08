@@ -19,7 +19,6 @@ export function useWeb3(): Web3 | null {
 function getWeb3(): Promise<Web3> {
     return new Promise((resolve, reject) => {
         window.addEventListener("load", async () => {
-
             // Enter url ganache is running on
             const provider = new Web3.providers.HttpProvider(
                 "http://127.0.0.1:7545"
