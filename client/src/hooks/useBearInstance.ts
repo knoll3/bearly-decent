@@ -28,7 +28,7 @@ export function useBearInstance(web3: Web3 | null): Contract | null {
                 console.error(error);
             }
         })();
-    }, [web3]);
+    }, [web3, BearContract.abi, BearContract.networks, instance]);
 
     return instance;
 }

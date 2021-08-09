@@ -18,7 +18,7 @@ export function useSocket(endpoint: string) {
         return () => {
             socket.disconnect();
         };
-    }, []);
+    }, [endpoint]);
 
     return socket;
 }

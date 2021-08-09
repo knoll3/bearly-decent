@@ -1,4 +1,4 @@
-import React, { createRef } from "react";
+import React from "react";
 import { Bear } from "types/Bear";
 import styles from "./index.module.css";
 
