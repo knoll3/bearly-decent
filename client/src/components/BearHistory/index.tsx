@@ -20,12 +20,9 @@ export const BearHistory: React.FC<BearHistoryProps> = ({
     onClickRow,
 }) => {
     // Cut the hash down into a sorter string
-    const formatHash = useCallback(
-        (hash: string): string => {
-            return `${hash.substr(0, 6)}...${hash.substr(-4)}`;
-        },
-        [bears]
-    );
+    const formatHash = useCallback((hash: string): string => {
+        return `${hash.substr(0, 6)}...${hash.substr(-4)}`;
+    }, []);
 
     return (
         <React.Fragment>
