@@ -2,11 +2,12 @@ import React, { useCallback } from "react";
 import { Bear } from "types/Bear";
 import styles from "./index.module.css";
 import { Button } from "components/Button";
-import { useFindBears } from "hooks/useFindBears";
 
 interface BearHistoryProps {
     bears: Bear[];
+    currentBear: Bear | null;
     onDeleteAll: React.MouseEventHandler<HTMLButtonElement>;
+    onClickRow: (bear: Bear) => void;
 }
 
 /**
@@ -14,7 +15,9 @@ interface BearHistoryProps {
  */
 export const BearHistory: React.FC<BearHistoryProps> = ({
     bears,
+    currentBear,
     onDeleteAll,
+    onClickRow,
 }) => {
     // Cut the hash down into a sorter string
     const formatHash = useCallback(
@@ -46,7 +49,10 @@ export const BearHistory: React.FC<BearHistoryProps> = ({
                     </thead>
                     <tbody>
                         {bears.map((bear, i) => (
-                            <tr key={`key-${i}`}>
+                            <tr
+                                key={`key-${i}`}
+                                onClick={() => onClickRow(bear)}
+                            >
                                 <td>{bear.name}</td>
                                 <td>{formatHash(bear.hash)}</td>
                             </tr>

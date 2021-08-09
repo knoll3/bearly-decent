@@ -19,6 +19,7 @@ export function useFindBears(
                 const _bears: Bear[] = res.map((b: any) => ({
                     name: b["name"],
                     hash: b["hash"],
+                    speech: b["speech"],
                 }));
                 setBears(_bears.reverse());
             });

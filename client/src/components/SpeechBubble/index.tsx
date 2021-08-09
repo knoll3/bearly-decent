@@ -11,10 +11,11 @@ export const SpeechBubble: React.FC<SpeechBubbleProps> = ({
     currentBear,
     bubbleRef,
 }) => {
+    if (!currentBear) return <></>;
     return (
         <React.Fragment>
             <div ref={bubbleRef} className={styles.speechBubble}>
-                I'm a fuzzy bear!
+                {currentBear.speech}
             </div>
         </React.Fragment>
     );
