@@ -4,7 +4,7 @@
 
 ### Description
 
-This repository is the solution to a challenge from Decent Labs. The challenge is to create a system which demonstrates simple linear flow.
+This repository is the solution to a challenge from [Decent Labs](https://www.decentlabs.io/). The challenge is to create a system which demonstrates simple linear flow.
 
 Bearly Decent fulfills all your bear naming needs. Input a pawesome adjective and the backend will automatically assign it to a bear. Say good-bye to your bear naming frustrations of the past.
 
@@ -88,3 +88,6 @@ There are a few things I would do differently if this were a larger application 
 
 -   SQL instead of Mongodb. I prefer the rigidity offered by SQL over mongo's more flexible structure. I went with mongo just because it's easy to set up and I'm already pretty familiar with it.
 -   Containerize the services. If this were to see continued development I would use docker-compose and containerize the client, server, ganache, and the db. Considering this was a small project and won't be worked on by anyone else there really is no point.
+
+---
+Note that the logo and color scheme I used belongs to Decent Labs.
