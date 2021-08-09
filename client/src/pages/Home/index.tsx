@@ -10,6 +10,7 @@ import { BearHistory } from "components/BearHistory";
 import decentBear from "decent-bear.png";
 import { SpeechBubble } from "components/SpeechBubble";
 import { useSpeechBubble } from "hooks/useSpeechBubble";
+import { Bear } from "types/Bear";
 
 // End point to api server
 const ENDPOINT = "http://localhost:8080";
@@ -45,6 +46,10 @@ export const HomePage: React.FC = () => {
         });
     };
 
+    const onClickRow = (bear: Bear) => {
+        setCurrentBear(bear);
+    };
+
     return (
         <div className={styles.home}>
             <div className={styles.decentBear}>
@@ -57,7 +62,12 @@ export const HomePage: React.FC = () => {
             </div>
             <Form instance={instance} userAddress={USER_ADDRESS} />
             <div className={styles.hRule} />
-            <BearHistory bears={bears} onDeleteAll={onDeleteAll} />
+            <BearHistory
+                bears={bears}
+                currentBear={currentBear}
+                onDeleteAll={onDeleteAll}
+                onClickRow={onClickRow}
+            />
         </div>
     );
 };

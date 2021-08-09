@@ -14,6 +14,7 @@ export function useBear(
         const bear: Bear = {
             name: data["name"],
             hash: data["hash"],
+            speech: data["speech"],
         };
         setBear(bear);
     };
