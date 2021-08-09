@@ -75,6 +75,12 @@ Use truffle to compile and migrate the smart contract from the root directory.
 $ truffle compile
 $ truffle migrate
 ```
+You also need to copy the contract abis from the server to the client.
+
+```
+$ cp -r ./server/src/contracts/ ./client/src/contracts
+```
+
 ---
 ### Possible Improvements
 
