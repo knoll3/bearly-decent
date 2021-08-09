@@ -1,4 +1,8 @@
-# Bearly Decent
+<p align="center">
+  <img height=200 width=auto src="https://github.com/knoll3/bearly-decent/blob/main/client/src/bearly-decent-bg.png?raw=true">
+</p>
+
+### Description
 
 This repository is the solution to a challenge from Decent Labs. The challenge is to create a system which demonstrates simple linear flow.
 
