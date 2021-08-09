@@ -16,6 +16,13 @@ Bearly Decent fulfills all your bear naming needs. Input a pawesome adjective an
 6. The API broadcasts the data to the frontend client via websockets.
 7. The frontend client displays the original string along with its hash.
 
+---
+
+<p align="center">
+  <img height=auto width=600 src="https://github.com/knoll3/bearly-decent/blob/main/client/src/bearly-decent-screenshot.png?raw=true">
+</p>
+
+---
 ### Client
 
 I am using React with Typescript and web3 for the frontend.
@@ -27,7 +34,7 @@ $ cd client
 $ yarn
 $ yarn start
 ```
-
+---
 ### Database
 
 I am using mongodb for the database running in a docker container.
@@ -43,7 +50,7 @@ $ docker ps
 CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS         PORTS       NAMES
 444863c09521   mongo:latest   "docker-entrypoint.s…"   9 seconds ago   Up 8 seconds   27017/tcp   mongodb
 ```
-
+---
 ### Api
 
 The backend API uses nodejs/typescript with express.
@@ -55,7 +62,7 @@ $ cd server
 $ yarn
 $ yarn start
 ```
-
+---
 ### Smart Contract
 
 The smart contract is written in Solidity.
@@ -68,7 +75,7 @@ Use truffle to compile and migrate the smart contract from the root directory.
 $ truffle compile
 $ truffle migrate
 ```
-
+---
 ### Possible Improvements
 
 There are a few things I would do differently if this were a larger application and I had more time.
